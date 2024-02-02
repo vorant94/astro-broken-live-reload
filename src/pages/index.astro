@@ -1,0 +1,29 @@
+---
+// option #1 relative paths (works)
+import {HydratedComponent} from "../components/HydratedComponent";
+import {StaticComponent} from "../components/StaticComponent";
+
+// option #2 combined relative paths barrel exports (doesn't work)
+// import {StaticComponent, HydratedComponent} from "../components";
+
+// option #3 separate relative paths barrel exports (doesn't work)
+// import {HydratedComponent} from "../components";
+// import {StaticComponent} from "../components";
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro</title>
+	</head>
+	<body>
+		<h1>Astro</h1>
+
+		<HydratedComponent client:load/>
+
+		<StaticComponent/>
+	</body>
+</html>
